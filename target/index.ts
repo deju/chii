@@ -27,7 +27,7 @@ if ((window as any).ChiiServerUrl) {
 } else {
   const element = getTargetScriptEl();
   if (element) {
-    const pattern = /((https?:)?\/\/(.*?)\/)/;
+    const pattern = /((https?:)?\/\/(.*?)\/)(.?\/?)target\.js/;
     const match = pattern.exec(element.src);
     if (match) {
       ChiiServerUrl = match[3];
