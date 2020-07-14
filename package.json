@@ -1,6 +1,6 @@
 {
-  "name": "chii",
-  "version": "0.6.6",
+  "name": "chii-easy",
+  "version": "0.6.7-beta",
   "description": "Chrome devtools framework",
   "main": "./server/index.js",
   "bin": {
@@ -23,17 +23,17 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/liriliri/chi.git"
+    "url": "git+https://github.com/deju/chii.git"
   },
   "keywords": [
     "devtools"
   ],
-  "author": "redhoodsu",
+  "author": "deju",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/liriliri/chi/issues"
+    "url": "https://github.com/deju/chii/issues"
   },
-  "homepage": "https://github.com/liriliri/chi#readme",
+  "homepage": "https://github.com/deju/chii#readme",
   "devDependencies": {
     "babel-eslint": "^10.1.0",
     "chobitsu": "^0.1.0",

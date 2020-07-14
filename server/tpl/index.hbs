@@ -86,8 +86,8 @@
   {{else}}
     <div class="description">
       You can use this script to inject the chii target code into your web page.<br/>
-      <a target="_blank" href="//{{domain}}/target.js">{{domain}}/target.js</a> <br/>
-      Or just open the demo page <a target="_blank" href="//{{domain}}/tests/demo.html">{{domain}}/tests/demo.html</a> to play around with.<br/>
+      <a target="_blank" href="//{{domain}}{{basename}}/target.js">{{domain}}{{basename}}/target.js</a> <br/>
+      Or just open the demo page <a target="_blank" href="//{{domain}}{{basename}}/tests/demo.html">{{domain}}{{basename}}/tests/demo.html</a> to play around with.<br/>
       <a target="_blank" href="https://github.com/liriliri/chii">Chii v{{version}}</a>
     </div>  
   {{/each}}
@@ -97,13 +97,13 @@
   <script>
     function inspect(id) {
       const protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-      const url = location.protocol + `//{{domain}}/front_end/chii_app.html?${protocol}={{domain}}/client/${_.randomId(6)}?target=${id}`;
+      const url = location.protocol + `//{{domain}}{{basename}}/front_end/chii_app.html?${protocol}={{domain}}{{basename}}/client/${_.randomId(6)}?target=${id}`;
       window.open(url, '_blank');
     }
 
     const start = Date.now();
     setInterval(() => {
-      fetch('/timestamp').then(res => res.text()).then(timestamp => {
+      fetch('{{basename}}/timestamp').then(res => res.text()).then(timestamp => {
         if (timestamp > start) location.reload();
       }, () => {});
     }, 2000);

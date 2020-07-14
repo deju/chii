@@ -12,7 +12,7 @@ const pkg = require('../../package.json');
 
 const maxAge = ms('2h');
 
-module.exports = function (channelManager, domain) {
+module.exports = function (channelManager, domain, basename) {
   const router = new Router();
 
   router.get('/', async ctx => {
@@ -27,6 +27,7 @@ module.exports = function (channelManager, domain) {
     ctx.body = tpl({
       targets,
       domain,
+      basename,
       version: pkg.version,
     });
   });
