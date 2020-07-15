@@ -10,6 +10,8 @@ const sessionStore = safeStorage('session');
 
 let ChiiServerUrl = location.host;
 
+let protocol = location.protocol === 'https:' ? 'wss:' : 'ws:';
+
 function getTargetScriptEl() {
   const elements = document.getElementsByTagName('script');
   let i = 0;
@@ -29,6 +31,9 @@ if ((window as any).ChiiServerUrl) {
   if (element) {
     const pattern = /((https?:)?\/\/(.*?)\/)(.?\/?)target\.js/;
     const match = pattern.exec(element.src);
+    if (/https?:/.test(element.src)) {
+      protocol = element.src.startsWith('https') ? 'wss:' : 'ws:';
+    }
     if (match) {
       ChiiServerUrl = match[3];
     }
@@ -64,8 +69,6 @@ if (!id) {
   id = randomId(6);
   sessionStore.setItem('chii-id', id);
 }
-
-const protocol = location.protocol === 'https:' ? 'wss:' : 'ws:';
 
 const ws = new Socket(
   `${protocol}//${ChiiServerUrl}/target/${id}?${query.stringify({
