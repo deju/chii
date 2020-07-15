@@ -75,6 +75,7 @@ const ws = new Socket(
     url: location.href,
     title: (window as any).ChiiTitle || document.title,
     favicon: getFavicon(),
+    ua: navigator.userAgent
   })}`
 );
 

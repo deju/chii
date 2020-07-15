@@ -53,6 +53,10 @@
     .url {
       color: #999;
     }
+    .useragent {
+      font-size: 12px;
+      color: #999;
+    }
     .action {
       color: rgb(17, 85, 204);
       cursor: pointer;
@@ -76,6 +80,9 @@
           <div class="subrow">
             <div class="name">{{title}}</div>
             <div class="url">{{url}}</div>
+          </div>
+          <div class="device">
+            <div class="useragent">{{useragent}}</div>
           </div>
           <div class="actions">
             <a class="action" onclick="inspect('{{id}}')">inspect</a>
