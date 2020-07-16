@@ -57,6 +57,11 @@
       font-size: 12px;
       color: #999;
     }
+    .timestamp, .ip, .connid {
+      font-size: 12px;
+      font-weight: bolder;
+      color: #333;
+    }
     .action {
       color: rgb(17, 85, 204);
       cursor: pointer;
@@ -82,7 +87,10 @@
             <div class="url">{{url}}</div>
           </div>
           <div class="device">
-            <div class="useragent">{{useragent}}</div>
+            <div class="useragent">userAgent: {{useragent}}</div>
+            <div class="timestamp">connect time: {{ts}}</div>
+            <div class="ip">IP: {{ip}}</div>
+            <div class="connid">connect id: {{id}}</div>
           </div>
           <div class="actions">
             <a class="action" onclick="inspect('{{id}}')">inspect</a>
