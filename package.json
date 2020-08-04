@@ -1,6 +1,6 @@
 {
   "name": "chii-easy",
-  "version": "0.6.7-beta9",
+  "version": "0.6.7-beta10",
   "description": "Chrome devtools framework",
   "main": "./server/index.js",
   "bin": {
@@ -35,8 +35,13 @@
   },
   "homepage": "https://github.com/deju/chii#readme",
   "devDependencies": {
+    "@babel/core": "^7.11.0",
+    "@babel/preset-env": "^7.11.0",
+    "@babel/preset-typescript": "^7.10.4",
     "babel-eslint": "^10.1.0",
+    "babel-loader": "^8.1.0",
     "chobitsu": "^0.1.0",
+    "error-polyfill": "^0.1.2",
     "eslint": "^6.8.0",
     "gulp": "^4.0.2",
     "gulp-clean": "^0.4.0",

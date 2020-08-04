@@ -1,3 +1,4 @@
+require("error-polyfill");
 import query from 'licia/query';
 import randomId from 'licia/randomId';
 import safeStorage from 'licia/safeStorage';

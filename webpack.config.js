@@ -4,9 +4,11 @@ module.exports = (env, argv) => {
   const config = {
     entry: './target/index.ts',
     devtool: 'inline-source-map',
+    target: 'web',
     output: {
       filename: 'target.js',
       path: path.resolve(__dirname, 'public'),
+      libraryTarget: 'umd',
     },
     resolve: {
       extensions: ['.ts', '.js'],
@@ -15,7 +17,11 @@ module.exports = (env, argv) => {
       rules: [
         {
           test: /\.ts$/,
-          loader: 'ts-loader',
+          loader: 'babel-loader',
+          options: {
+            presets: [['@babel/preset-env', {targets: { chrome: '58', ie: '11'}}], '@babel/preset-typescript']  //Preset used for env setup
+           }
+          // loader: 'ts-loader',
         },
       ],
     },
